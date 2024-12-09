@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CBPM Mobile Layout</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <button class="menu-btn">☰</button>
+      <div class="logo">CBPM</div>
+      <button class="search-btn">🔍</button>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="#">🏠 Home</a></li>
+        <li><a href="#">📂 Consultar Arquivos Digitalizados</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Search Section -->
+      <section class="search-section">
+        <div class="search-bar">
+          <select id="sector">
+            <option value="financeiro" selected>Financeiro</option>
+            <option value="outro">Outro</option>
+          </select>
+          <input type="text" id="indexer" placeholder="Digite um indexador" />
+          <button class="search-btn">Pesquisar</button>
+        </div>
+        <button class="clear-filters">Limpar Filtros</button>
+      </section>
+
+      <!-- Results Section -->
+      <section class="results">
+        <h2>Resultados</h2>
+        <div class="result-card" onclick="openPreview('sample.pdf')">
+          <div class="file-icon">📄</div>
+          <div class="file-details">
+            <p class="file-name">04_1999_8071...FBD13973.PDF</p>
+            <p class="file-info">Setor: Financeiro</p>
+            <p class="file-info">Data: 05/11/2024 | Tamanho: 50KB</p>
+          </div>
+          <button class="export-btn">Exportar</button>
+        </div>
+        <!-- Add more result cards as needed -->
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>📄 99,474 Pages</span>
+      <span>📂 3,967 Files</span>
+    </footer>
+
+    <!-- File Preview Modal -->
+    <div class="file-preview-modal" id="filePreviewModal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closePreview()">✖</button>
+        <iframe id="filePreviewFrame" src="" frameborder="0"></iframe>
+      </div>
+    </div>
+
+    <script src="js.js"></script>
+  </body>
+</html>
